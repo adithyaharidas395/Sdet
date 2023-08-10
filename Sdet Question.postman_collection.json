@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "7a6c976c-1d55-4420-88c1-42f753952ed4",
+		"name": "Sdet Question",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27912023"
+	},
+	"item": [
+		{
+			"name": "http://universities.hipolabs.com/search?country=United+States",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () =>{\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Status code is 400\", () =>{\r",
+							"    pm.response.to.have.status(400);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Content-Type Header\",() =>{\r",
+							"    pm.response.to.have.header(\"Content-Type\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?country=United+States",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "United+States"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
